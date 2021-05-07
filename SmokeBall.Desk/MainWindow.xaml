@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Get latest find" HorizontalAlignment="Left" Margin="260,279,0,0" VerticalAlignment="Top" Height="27" Width="107" Click="Button_Click"/>
-        <Label Content="Smokeball's top finds" HorizontalAlignment="Left" Margin="238,92,0,0" VerticalAlignment="Top" Height="31" Width="189"/>
-        <TextBox x:Name="TextBoxResult" HorizontalAlignment="Left" Margin="209,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="106" RenderTransformOrigin="0.5,0.5">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFF5B394" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Get latest find" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="27" Width="108" Click="Button_Click"/>
+        <Label Content="Smokeball Ordinal Site Occurence" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" Height="35" Width="348" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI" Foreground="White" RenderTransformOrigin="0.695,0.722"/>
+        <TextBox x:Name="TextBoxResult" HorizontalAlignment="Left" Margin="262,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="106" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

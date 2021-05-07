@@ -46,9 +46,24 @@ namespace SmokeBall.Test
             Assert.IsNotNull(res);
         }
         [TestMethod]
-        public void GetSearchResult_Test()
+        public void GetSearchResult_3Results_Test()
         {
             List<int> countList = new List<int>() { 1, 5, 15 };
+            var res = wst.GetSearchResult(countList);
+            Assert.IsNotNull(res);
+        }
+        [TestMethod]
+        public void GetSearchResult_OneResult_Test()
+        {
+            List<int> countList = new List<int>() { 2 };
+            var res = wst.GetSearchResult(countList);
+            Assert.IsNotNull(res);
+        }
+
+        [TestMethod]
+        public void GetSearchResult_NoResult_Test()
+        {
+            List<int> countList = new List<int>() {  };
             var res = wst.GetSearchResult(countList);
             Assert.IsNotNull(res);
         }

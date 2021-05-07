@@ -29,10 +29,14 @@ namespace SmokeBall.BLL.Common
         public string GetSearchResult(List<int> CountList)
         {
             string strList = "";
+            int numberOfCounts = 0;
             foreach (var count in CountList)
             {
-                strList += count + ",";
+                strList += (numberOfCounts > 0 ? "," : "") + count ;
+
+                numberOfCounts++;
             }
+            strList = strList== "" ? "No Results": strList;
             return strList;
         }
     }

@@ -30,7 +30,8 @@ namespace SmokeBall.Desk
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             GetWebResults gwr = new GetWebResults();
-            TextBoxResult.Text = gwr.OutputString();            
+            TextBoxResult.Text = gwr.OutputString();        
+           
         }
     }
 }
