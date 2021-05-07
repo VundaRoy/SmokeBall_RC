@@ -4,6 +4,7 @@ using Moq;
 using SmokeBall.BLL.Common;
 using System.Collections.Generic;
 using System.IO;
+using System.Configuration;
 
 namespace SmokeBall.Test
 {
@@ -41,8 +42,18 @@ namespace SmokeBall.Test
             var urlStr = "https://www.google.com.au/search?num=100&q=conveyancing+software";
             var html = ws.GetHtmlFromWeb(urlStr);
             var parsedHtml = ws.GetParsedHtml(html);
-            string url = "www.smokeball.com.au";
+            string url = ConfigurationManager.AppSettings.Get("urlLinkTest").ToString();
             var res = wst.UrlSearchCount(url,parsedHtml);
+            Assert.IsNotNull(res);
+        }
+        [TestMethod]
+        public void UrlSearchCount_LeapSearch_Test()
+        {
+            var urlStr = "https://www.google.com.au/search?num=100&q=conveyancing+software";
+            var html = ws.GetHtmlFromWeb(urlStr);
+            var parsedHtml = ws.GetParsedHtml(html);
+            string url = ConfigurationManager.AppSettings.Get("urlLeapTest").ToString();
+            var res = wst.UrlSearchCount(url, parsedHtml);
             Assert.IsNotNull(res);
         }
         [TestMethod]
