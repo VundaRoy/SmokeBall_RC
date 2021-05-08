@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace SmokeBall.BLL.Common
 {
-    public class WebStatistics : IWebStatistics
+   public class WebStatistics : IWebStatistics
     {
-        public List<int> UrlSearchCount(string Url, List<string> SearchList)
+        //Get url search count based on top x and extract it to a list of int
+        public List<int> UrlSearchCount(string Url, List<string> SearchList, int TopCount)
         {
             List<int> countList = new List<int>();
             int count = 1;
             foreach (var link in SearchList)
             {
-                if (count <= 100)
+                if (count <= TopCount)
                 {
                     if (link.Contains(Url))
                     {
@@ -26,6 +27,8 @@ namespace SmokeBall.BLL.Common
             }
             return countList;
         }
+
+        //Output the list of int to string
         public string GetSearchResult(List<int> CountList)
         {
             string strList = "";

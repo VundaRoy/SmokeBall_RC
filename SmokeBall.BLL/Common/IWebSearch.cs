@@ -15,7 +15,7 @@ namespace SmokeBall.BLL.Common
 
     interface IWebStatistics 
     {
-        public List<int> UrlSearchCount(string Url, List<string> SearchList);
+        public List<int> UrlSearchCount(string Url, List<string> SearchList, int TopCount);
         public string GetSearchResult(List<int> CountList);
     }
 }

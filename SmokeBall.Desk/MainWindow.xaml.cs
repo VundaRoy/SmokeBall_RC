@@ -27,6 +27,7 @@ namespace SmokeBall.Desk
             InitializeComponent();
         }
 
+        //Get web search count and display on screen
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TextBoxResult.Text = "";

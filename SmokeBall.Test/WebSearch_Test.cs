@@ -5,6 +5,7 @@ using SmokeBall.BLL.Common;
 using System.Collections.Generic;
 using System.IO;
 using System.Configuration;
+using System;
 
 namespace SmokeBall.Test
 {
@@ -43,7 +44,8 @@ namespace SmokeBall.Test
             var html = ws.GetHtmlFromWeb(urlStr);
             var parsedHtml = ws.GetParsedHtml(html);
             string url = ConfigurationManager.AppSettings.Get("urlLinkTest").ToString();
-            var res = wst.UrlSearchCount(url,parsedHtml);
+            int topCount =Convert.ToInt32( ConfigurationManager.AppSettings.Get("topSearchCount").ToString());
+            var res = wst.UrlSearchCount(url,parsedHtml,topCount);
             Assert.IsNotNull(res);
         }
         [TestMethod]
@@ -53,7 +55,8 @@ namespace SmokeBall.Test
             var html = ws.GetHtmlFromWeb(urlStr);
             var parsedHtml = ws.GetParsedHtml(html);
             string url = ConfigurationManager.AppSettings.Get("urlLeapTest").ToString();
-            var res = wst.UrlSearchCount(url, parsedHtml);
+            int topCount = Convert.ToInt32(ConfigurationManager.AppSettings.Get("topSearchCount").ToString());
+            var res = wst.UrlSearchCount(url, parsedHtml,topCount);
             Assert.IsNotNull(res);
         }
         [TestMethod]

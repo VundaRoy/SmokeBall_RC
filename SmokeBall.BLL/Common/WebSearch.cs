@@ -11,7 +11,7 @@ namespace SmokeBall.BLL.Common
 {
     public class WebSearch : IWebSearch
     {      
-
+        //Parse html extract to chunks of data separated by div
         public List<string> GetParsedHtml(string html)
         {
             HtmlDocument htmlDoc = new HtmlDocument();
@@ -28,6 +28,7 @@ namespace SmokeBall.BLL.Common
             return webSearches;
         }
 
+        //Scrape website results to string
         public string GetHtmlFromWeb(string url)
         {
             HttpClient client = new HttpClient();
