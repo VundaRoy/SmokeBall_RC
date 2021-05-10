@@ -24,7 +24,10 @@ namespace SmokeBall.Desk
     {
         public MainWindow()
         {
+            
             InitializeComponent();
+            GetWebResults gwr = new GetWebResults();
+            SubHeadingLabel.Content = gwr.GetSubheading();
         }
 
         //Get web search count and display on screen
